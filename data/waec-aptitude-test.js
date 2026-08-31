@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRODUCT QUESTION BANK — WAEC Aptitude & General Paper
+   PRODUCT QUESTION BANK — WAEC Recruitment Aptitude Test
    Dynamic ES module for GovPrep. Default export = flat questions array.
    chapterIndex maps to MOCK_PRODUCTS_DATABASE entry WAECAPT.chapters[]
    ========================================================================== */
@@ -7,7 +7,7 @@
 export const PRODUCT_CODE = "WAEC-APT";
 
 export const questions = [
-  // ----- Chapter 0: Quantitative Reasoning & Numeracy -----
+  // ----- Chapter 0: Quantitative Reasoning & Advanced Numeracy -----
   {
     id: "WAEC-APT-CQ-01-001",
     chapterIndex: 0,
@@ -37,14 +37,14 @@ export const questions = [
   {
     id: "WAEC-APT-CQ-01-003",
     chapterIndex: 0,
-    text: "A student scores 72, 68, 75 and 85 in four tests. What is the average score?",
-    choices: ["75", "72.5", "74", "76"],
+    text: "Calculate the standard deviation of the following dataset representing candidate scores: 4, 6, 8, 10, 12.",
+    choices: ["2.83", "4.00", "8.00", "2.00"],
     correct: 0,
-    explanation: "Sum = 72 + 68 + 75 + 85 = 300. Average = 300 ÷ 4 = 75.",
+    explanation: "Mean = (4+6+8+10+12)/5 = 8. Squared differences from mean = 16 + 4 + 0 + 4 + 16 = 40. Variance = 40/5 = 8. Standard deviation = √8 ≈ 2.83.",
     distractors: [
-      "This is closer to a median estimate, not the arithmetic mean.",
-      "This under-counts the total sum.",
-      "This over-counts the total sum."
+      "Confused variance with standard deviation.",
+      "Used the value of the mean instead of calculating dispersion.",
+      "Divided the sum of absolute deviations directly without squaring."
     ]
   },
   {
@@ -63,148 +63,158 @@ export const questions = [
   {
     id: "WAEC-APT-CQ-01-005",
     chapterIndex: 0,
-    text: "A bus travels 240 km in 3 hours. What is its average speed in km/h?",
-    choices: ["60", "80", "70", "90"],
-    correct: 1,
-    explanation: "Speed = distance ÷ time = 240 ÷ 3 = 80 km/h.",
+    text: "A candidate scores a raw mark of 75 on a test with a mean of 60 and a standard deviation of 10. What is the candidate's standardized z-score?",
+    choices: ["+1.5", "+1.0", "+2.0", "-1.5"],
+    correct: 0,
+    explanation: "z = (X - Mean) / Standard Deviation = (75 - 60) / 10 = 15 / 10 = +1.5.",
     distractors: [
-      "This divides by 4 instead of 3.",
-      "This is an arbitrary mid value between options.",
-      "This assumes a shorter travel time."
+      "Subtracted the standard deviation from the mean difference incorrectly.",
+      "Divided the total raw score by the standard deviation directly.",
+      "Applied a negative vector to a score above the average mean."
     ]
   },
 
-  // ----- Chapter 1: Verbal Reasoning & English Usage -----
+  // ----- Chapter 1: Verbal Reasoning & English Comprehension -----
   {
     id: "WAEC-APT-CQ-02-001",
     chapterIndex: 1,
-    text: "Choose the option nearest in meaning to the underlined word: The principal's speech was very lucid.",
-    choices: ["Clear", "Long", "Angry", "Boring"],
+    text: "Choose the option nearest in meaning to the underlined word: The Registrar's directive on examination security was explicit.",
+    choices: ["Clear and fully expressed", "Vague and ambiguous", "Lengthy and verbose", "Strictly confidential"],
     correct: 0,
-    explanation: "Lucid means clear and easy to understand.",
+    explanation: "'Explicit' means stated clearly and in detail, leaving no room for confusion.",
     distractors: [
-      "Length is not part of the meaning of lucid.",
-      "Anger is not implied by lucid.",
-      "Interest level is separate from clarity."
+      "This is an antonym of explicit.",
+      "Explicit refers to clarity, not word count.",
+      "Confidentiality relates to secrecy, not explicit clarity."
     ]
   },
   {
     id: "WAEC-APT-CQ-02-002",
     chapterIndex: 1,
-    text: "Fill in the blank: The committee members _____ divided on the proposal.",
-    choices: ["was", "were", "is", "has"],
-    correct: 1,
-    explanation: "'Members' is plural, so the correct verb is 'were'.",
+    text: "Fill in the blank: Neither the invigilators nor the supervisor _____ present when the seals were broken.",
+    choices: ["was", "were", "are", "have been"],
+    correct: 0,
+    explanation: "When using 'neither/nor', the verb agrees with the closer subject. 'Supervisor' is singular, so 'was' is correct.",
     distractors: [
-      "Singular verb does not agree with a plural subject.",
-      "Present singular does not agree with the plural subject.",
-      "Wrong auxiliary for this construction."
+      "Erroneously matched agreement with the plural noun 'invigilators'.",
+      "Used present tense for a completed past event.",
+      "Incorrect subject-verb auxiliary agreement."
     ]
   },
   {
     id: "WAEC-APT-CQ-02-003",
     chapterIndex: 1,
-    text: "Which word is the odd one out?",
-    choices: ["Apple", "Orange", "Banana", "Carrot"],
-    correct: 3,
-    explanation: "Carrot is a root vegetable; the others are fruits.",
+    text: "Choose the word opposite in meaning to 'Punctilious' as used in administrative compliance.",
+    choices: ["Careless", "Meticulous", "Formal", "Rigid"],
+    correct: 0,
+    explanation: "Punctilious means showing great attention to detail or correct behavior; its antonym is careless.",
     distractors: [
-      "Apple is a fruit, like orange and banana.",
-      "Orange is a fruit.",
-      "Banana is a fruit."
+      "Meticulous is a synonym of punctilious.",
+      "Formal describes compliance style, not attention to detail.",
+      "Rigid refers to inflexibility, not lack of attention to detail."
     ]
   },
   {
     id: "WAEC-APT-CQ-02-004",
     chapterIndex: 1,
-    text: "Select the correctly spelled word.",
-    choices: ["Accommodation", "Acommodation", "Accomodation", "Acomodation"],
+    text: "Select the correctly spelled administrative designation.",
+    choices: ["Bureaucracy", "Beureaucracy", "Bureaucracy", "Bureacracy"],
     correct: 0,
-    explanation: "Accommodation is spelled with double 'c' and double 'm'.",
+    explanation: "The correct spelling is 'Bureaucracy' (b-u-r-e-a-u-c-r-a-c-y).",
     distractors: [
-      "Missing one 'c'.",
-      "Missing one 'm'.",
-      "Missing both double letters."
+      "Misplaced 'e' before 'u'.",
+      "Duplicate entry of incorrect vowel ordering.",
+      "Omitted the silent 'u' in the prefix."
     ]
   },
   {
     id: "WAEC-APT-CQ-02-005",
     chapterIndex: 1,
-    text: "The opposite of 'scarce' is:",
-    choices: ["Abundant", "Rare", "Limited", "Sparse"],
-    correct: 0,
-    explanation: "Scarce means in short supply; abundant means plentiful.",
+    text: "Identify the logical inference from the statement: 'All candidates who breach CBT instructions face immediate disqualification.'",
+    choices: [
+      "A disqualified candidate must have breached CBT instructions",
+      "Strict compliance with instructions guarantees passing the exam",
+      "Breaching CBT instructions is a sufficient condition for disqualification",
+      "Only CBT candidates are subject to examination disqualification"
+    ],
+    correct: 2,
+    explanation: "The conditional statement establishes that breaching instructions guarantees disqualification (sufficient condition). Disqualification might also occur for other reasons.",
     distractors: [
-      "Rare is a near synonym of scarce.",
-      "Limited is similar in meaning to scarce.",
-      "Sparse is similar in meaning to scarce."
+      "Commits the fallacy of affirming the consequent.",
+      "Confuses procedural compliance with academic success.",
+      "Extrapolates the rule beyond its stated scope."
     ]
   },
 
-  // ----- Chapter 2: General Knowledge & Current Affairs -----
+  // ----- Chapter 2: WAEC Institutional Mandate, History & Public Service -----
   {
     id: "WAEC-APT-CQ-03-001",
     chapterIndex: 2,
-    text: "The capital city of Nigeria is:",
-    choices: ["Lagos", "Abuja", "Kano", "Port Harcourt"],
-    correct: 1,
-    explanation: "Abuja is the Federal Capital Territory and seat of government.",
+    text: "The West African Examinations Council (WAEC) was established in 1952 following the recommendation of which historical report?",
+    choices: ["The Jeffrey Report of 1950", "The Ashby Commission Report", "The Elliot Commission Report", "The Phillipson Report"],
+    correct: 0,
+    explanation: "WAEC was founded following the recommendations of Dr. G.B. Jeffrey's 1950 report on examinations in West Africa.",
     distractors: [
-      "Lagos was the former capital.",
-      "Kano is a major city but not the capital.",
-      "Port Harcourt is a major oil city but not the capital."
+      "The Ashby Commission focused on higher education post-1960.",
+      "The Elliot Commission focused on university education setup in West Africa.",
+      "The Phillipson Report dealt with Nigerianization of civil service."
     ]
   },
   {
     id: "WAEC-APT-CQ-03-002",
     chapterIndex: 2,
-    text: "How many geopolitical zones are there in Nigeria?",
-    choices: ["4", "5", "6", "8"],
-    correct: 2,
-    explanation: "Nigeria has six geopolitical zones: North-West, North-East, North-Central, South-West, South-East, and South-South.",
+    text: "Which of the following lists the complete set of official WAEC member countries?",
+    choices: [
+      "Nigeria, Ghana, Sierra Leone, The Gambia, and Liberia",
+      "Nigeria, Ghana, Sierra Leone, Cameroon, and Liberia",
+      "Nigeria, Ghana, Kenya, The Gambia, and Sierra Leone",
+      "Nigeria, Ghana, Ivory Coast, Sierra Leone, and Liberia"
+    ],
+    correct: 0,
+    explanation: "WAEC serves five Commonwealth West African nations: Nigeria, Ghana, Sierra Leone, The Gambia, and Liberia (which joined in 1974).",
     distractors: [
-      "This under-counts the standard six zones.",
-      "This does not match the six-zone structure.",
-      "This over-counts the zones."
+      "Cameroon is not a member of WAEC.",
+      "Kenya is located in East Africa and is not a member.",
+      "Ivory Coast (Cote d'Ivoire) is a Francophone state and not a member."
     ]
   },
   {
     id: "WAEC-APT-CQ-03-003",
     chapterIndex: 2,
-    text: "The currency of Nigeria is the:",
-    choices: ["Cedi", "Naira", "CFA Franc", "Shilling"],
-    correct: 1,
-    explanation: "The official currency is the Nigerian Naira (₦).",
+    text: "Where is the International Headquarters of the West African Examinations Council situated?",
+    choices: ["Accra, Ghana", "Lagos, Nigeria", "Freetown, Sierra Leone", "Banjul, The Gambia"],
+    correct: 0,
+    explanation: "The International Headquarters of WAEC is located in Accra, Ghana, headed by the Secretary to Council.",
     distractors: [
-      "The cedi is Ghana's currency.",
-      "The CFA franc is used in several Francophone West African states.",
-      "The shilling is used in countries such as Kenya and Uganda."
+      "Lagos hosts the Head National Office (HNO) of Nigeria, not the International HQ.",
+      "Freetown hosts a Head National Office.",
+      "Banjul hosts a Head National Office."
     ]
   },
   {
     id: "WAEC-APT-CQ-03-004",
     chapterIndex: 2,
-    text: "Which body conducts the West African Senior School Certificate Examination (WASSCE)?",
-    choices: ["JAMB", "WAEC", "NECO", "NUC"],
-    correct: 1,
-    explanation: "The West African Examinations Council (WAEC) conducts the WASSCE.",
+    text: "Under the Public Service Rules (PSR), what is the mandatory retirement age for civil servants in Nigeria?",
+    choices: ["60 years of age or 35 years of pensionable service", "65 years of age or 40 years of service", "55 years of age or 30 years of service", "70 years of age regardless of service length"],
+    correct: 0,
+    explanation: "Standard Nigerian PSR mandates retirement at 60 years of age or 35 years of pensionable service, whichever comes first.",
     distractors: [
-      "JAMB conducts the UTME for tertiary admission.",
-      "NECO conducts a parallel national examination in Nigeria.",
-      "NUC regulates universities and does not set secondary school exams."
+      "This retirement threshold applies to university professors and judicial officers.",
+      "This is below the official civil service statutory limits.",
+      "This applies strictly to apex judicial offices."
     ]
   },
   {
     id: "WAEC-APT-CQ-03-005",
     chapterIndex: 2,
-    text: "Which of the following is a national symbol of Nigeria?",
-    choices: ["The Eagle", "The Lion", "The Kangaroo", "The Dragon"],
+    text: "Which division within WAEC is primarily responsible for item banking, syllabus review, and paper setting?",
+    choices: ["Test Development Division (TDD)", "Test Administration Division (TAD)", "Finance Division", "Corporate Affairs Division"],
     correct: 0,
-    explanation: "An eagle features on the Nigerian coat of arms as a national symbol.",
+    explanation: "Test Development Division (TDD) designs syllabi, constructs items, moderates questions, and builds item banks.",
     distractors: [
-      "The lion is not the animal on Nigeria's coat of arms.",
-      "The kangaroo is associated with Australia.",
-      "The dragon is not a Nigerian national symbol."
+      "TAD oversees exam logistics, custody, invigilation, and centre administration.",
+      "Finance handles operational budgeting and disbursements.",
+      "Corporate Affairs handles public relations and institutional communications."
     ]
   },
 
@@ -225,45 +235,45 @@ export const questions = [
   {
     id: "WAEC-APT-CQ-04-002",
     chapterIndex: 3,
-    text: "If all roses are flowers and some flowers fade quickly, which statement must be true?",
+    text: "Premise 1: All examination officers undergo security clearance.\nPremise 2: Some IT officers are examination officers.\nConclusion: ?",
     choices: [
-      "Some roses fade quickly",
-      "All flowers are roses",
-      "Some flowers may be roses",
-      "No rose fades quickly"
+      "Some IT officers undergo security clearance",
+      "All IT officers undergo security clearance",
+      "No IT officer undergoes security clearance",
+      "Security clearance is required only for IT officers"
     ],
-    correct: 2,
-    explanation: "Roses form a subset of flowers, so some flowers may be roses. The other conclusions do not necessarily follow from the premises.",
+    correct: 0,
+    explanation: "Since all members of the exam officer set undergo clearance, any IT officer who belongs to that set must also undergo clearance.",
     distractors: [
-      "This is possible but not necessarily true.",
-      "This reverses the given subset relationship.",
-      "This is not supported by the premises."
+      "Over-generalizes from 'some' to 'all'.",
+      "Directly contradicts the logical premises.",
+      "Assumes exclusivity not supported by the premises."
     ]
   },
   {
     id: "WAEC-APT-CQ-04-003",
     chapterIndex: 3,
-    text: "Complete the analogy: Book is to Reading as Fork is to _____.",
-    choices: ["Drawing", "Writing", "Eating", "Cooking"],
-    correct: 2,
-    explanation: "A book is used for reading; a fork is used for eating.",
+    text: "In a certain code, 'WASSCE' is written as 'YCUUEG'. How is 'PAPERS' written in that same code?",
+    choices: ["RCRGTU", "RCRGVT", "QBQFST", "RBRGUT"],
+    correct: 0,
+    explanation: "Each letter is shifted forward by +2 positions in the alphabet: P(+2)=R, A(+2)=C, P(+2)=R, E(+2)=G, R(+2)=T, S(+2)=U.",
     distractors: [
-      "Drawing is not the primary use of a fork.",
-      "Writing relates to a pen, not a fork.",
-      "Cooking is broader than the direct use of a fork."
+      "Miscalculated the shift for the final character.",
+      "Applied a +1 shift instead of +2.",
+      "Made an transposition error on the middle consonants."
     ]
   },
   {
     id: "WAEC-APT-CQ-04-004",
     chapterIndex: 3,
-    text: "Which shape does not belong with the others: Square, Rectangle, Triangle, Circle?",
-    choices: ["Square", "Rectangle", "Triangle", "Circle"],
-    correct: 3,
-    explanation: "A circle is the only shape without straight sides.",
+    text: "Which shape concept does not belong with the others: Octagon, Hexagon, Cylinder, Pentagon?",
+    choices: ["Octagon", "Hexagon", "Cylinder", "Pentagon"],
+    correct: 2,
+    explanation: "Cylinder is a 3D geometric solid; Octagon, Hexagon, and Pentagon are 2D polygons.",
     distractors: [
-      "A square has straight sides.",
-      "A rectangle has straight sides.",
-      "A triangle has straight sides."
+      "Octagon is a 2D polygon with 8 sides.",
+      "Hexagon is a 2D polygon with 6 sides.",
+      "Pentagon is a 2D polygon with 5 sides."
     ]
   },
   {
@@ -285,157 +295,167 @@ export const questions = [
     ]
   },
 
-  // ----- Chapter 4: Civic Education & National Values -----
+  // ----- Chapter 4: Educational Measurement & Psychometrics (General Duties Track) -----
   {
     id: "WAEC-APT-CQ-05-001",
     chapterIndex: 4,
-    text: "Which of the following is a fundamental human right in Nigeria?",
-    choices: [
-      "Right to free university education for all",
-      "Right to life",
-      "Right to a government job",
-      "Right to own any land without title"
-    ],
-    correct: 1,
-    explanation: "The right to life is guaranteed under the Constitution of the Federal Republic of Nigeria as a fundamental right.",
+    text: "An item analysis reveals that an exam question was answered correctly by 85 out of 100 candidates. What is the item difficulty index (p-value)?",
+    choices: ["0.85", "0.15", "8.50", "0.50"],
+    correct: 0,
+    explanation: "Difficulty index (p-value) = Number of correct responses / Total candidates = 85 / 100 = 0.85 (indicating a very easy item).",
     distractors: [
-      "Education is important but free university for all is not framed as a fundamental right in the same way.",
-      "Employment is not a fundamental constitutional right.",
-      "Land ownership is regulated by law and is not unlimited."
+      "This measures the proportion of incorrect responses (1 - p).",
+      "Scaling magnitude mistake.",
+      "Assumes a default medium difficulty level."
     ]
   },
   {
     id: "WAEC-APT-CQ-05-002",
     chapterIndex: 4,
-    text: "The three arms of government in Nigeria are:",
+    text: "If an assessment yields highly consistent results across multiple administrations but fails to measure the target syllabus objectives, it exhibits:",
     choices: [
-      "Federal, State, Local",
-      "Executive, Legislature, Judiciary",
-      "President, Governor, Chairman",
-      "Police, Army, Customs"
+      "High reliability and low validity",
+      "Low reliability and high validity",
+      "High reliability and high validity",
+      "Low reliability and low validity"
     ],
-    correct: 1,
-    explanation: "Separation of powers is among the Executive, the Legislature, and the Judiciary.",
+    correct: 0,
+    explanation: "Reliability measures consistency; validity measures accuracy. Consistent outcomes without measuring the intended objective signify high reliability paired with low validity.",
     distractors: [
-      "These are tiers of government, not arms.",
-      "These are offices within the executive structure.",
-      "These are security and enforcement agencies."
+      "A test cannot have high validity without underlying measurement consistency.",
+      "High validity requires measuring the actual target objectives correctly.",
+      "Consistency rules out low reliability."
     ]
   },
   {
     id: "WAEC-APT-CQ-05-003",
     chapterIndex: 4,
-    text: "Voting in a general election is an example of:",
-    choices: ["Civil responsibility", "Civil disobedience", "Judicial process", "Military duty"],
+    text: "According to Bloom's Revised Taxonomy, which cognitive domain level requires a student to justify a decision or course of action?",
+    choices: ["Evaluating", "Analyzing", "Applying", "Creating"],
     correct: 0,
-    explanation: "Participating in elections is a civic duty and responsibility of citizens.",
+    explanation: "'Evaluating' involves making judgments based on criteria and standards, such as justifying a decision.",
     distractors: [
-      "Civil disobedience is deliberate non-compliance with laws.",
-      "Voting is not a judicial process.",
-      "Military duty applies to members of the armed forces."
+      "Analyzing refers to breaking down material into component parts.",
+      "Applying refers to executing or using a procedure in a given situation.",
+      "Creating involves putting elements together to form a coherent functional whole."
     ]
   },
   {
     id: "WAEC-APT-CQ-05-004",
     chapterIndex: 4,
-    text: "The rule of law primarily means that:",
-    choices: [
-      "The president is above the law",
-      "Everyone is equal before the law",
-      "Only the rich obey the law",
-      "Laws apply only in the capital city"
-    ],
-    correct: 1,
-    explanation: "The rule of law requires equality before the law and that no person is above it.",
+    text: "Which reliability coefficient formula is specifically designed to assess internal consistency for dichotomously scored test items (0 or 1)?",
+    choices: ["Kuder-Richardson 20 (KR-20)", "Cronbach's Alpha", "Pearson Product-Moment", "Spearman-Brown Prophecy"],
+    correct: 0,
+    explanation: "KR-20 is designed for internal consistency of dichotomous items (right/wrong). Cronbach's Alpha generalizes this for multipoint/Likert items.",
     distractors: [
-      "This contradicts the rule of law.",
-      "This contradicts equality before the law.",
-      "The law applies throughout the federation."
+      "Cronbach's Alpha is used for continuous or non-dichotomous items.",
+      "Pearson correlation measures bivariate linear relationships.",
+      "Spearman-Brown adjusts split-half reliability estimates for test length changes."
     ]
   },
   {
     id: "WAEC-APT-CQ-05-005",
     chapterIndex: 4,
-    text: "National integration in Nigeria is best promoted by:",
+    text: "A standardized test score report gives a student a Stanine score of 9. How should an assessment officer interpret this result?",
     choices: [
-      "Ethnic favouritism",
-      "Religious intolerance",
-      "Respect for diversity and fairness",
-      "Ignoring minority groups"
+      "Superior performance (top 4% of the norm group)",
+      "Average performance (middle 20% of the norm group)",
+      "Below average performance (bottom 11% of the norm group)",
+      "Failing performance requiring mandatory paper re-sit"
     ],
-    correct: 2,
-    explanation: "Unity in diversity and equitable treatment strengthen national integration.",
+    correct: 0,
+    explanation: "Stanine scores range from 1 to 9. A stanine of 9 represents the highest performance band, corresponding to the top 4% of test takers.",
     distractors: [
-      "Favouritism undermines national unity.",
-      "Intolerance fuels conflict.",
-      "Exclusion weakens the federation."
+      "Stanines 4, 5, and 6 represent average performance.",
+      "Stanine 2 or 3 represents below average performance.",
+      "Stanines represent relative normative rank, not absolute pass/fail thresholds."
     ]
   },
 
-  // ----- Chapter 5: Basic Science & Everyday Technology -----
+  // ----- Chapter 5: Assessment Security, Ethics & Office Administration -----
   {
     id: "WAEC-APT-CQ-06-001",
     chapterIndex: 5,
-    text: "Which gas do plants absorb during photosynthesis?",
-    choices: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
-    correct: 2,
-    explanation: "Plants take in carbon dioxide and release oxygen during photosynthesis.",
+    text: "Which official WAEC committee is empowered to investigate and take final disciplinary decisions on reported examination malpractice cases?",
+    choices: [
+      "National Committee on Educational Cases (NCEC)",
+      "Board of Directorates",
+      "Public Accounts Committee",
+      "Tender and Ethics Board"
+    ],
+    correct: 0,
+    explanation: "The Committee on Educational Cases considers reports of malpractice and determines appropriate penalties/cancellations.",
     distractors: [
-      "Oxygen is released as a product, not the main gas absorbed.",
-      "Nitrogen is abundant in air but is not the primary photosynthetic input.",
-      "Hydrogen is not absorbed from the air in this process."
+      "The Board handles general institutional policy, not specific candidate malpractice cases.",
+      "Public Accounts deals with audit and financial compliance.",
+      "Tender Board handles procurement contracts."
     ]
   },
   {
     id: "WAEC-APT-CQ-06-002",
     chapterIndex: 5,
-    text: "The unit of electric current is the:",
-    choices: ["Volt", "Watt", "Ampere", "Ohm"],
-    correct: 2,
-    explanation: "Electric current is measured in amperes (A).",
+    text: "When drafting an official minute on an administrative file in the public service, what is the primary objective?",
+    choices: [
+      "To provide a concise summary of background facts and recommend a clear line of action",
+      "To write a detailed essay expressing personal opinions on organizational policies",
+      "To duplicate all previous correspondence verbatim",
+      "To issue a binding disciplinary query to subordinate staff"
+    ],
+    correct: 0,
+    explanation: "Administrative minuting requires summarizing the issue clearly, highlighting relevant rules/precedents, and suggesting concrete actionable recommendations.",
     distractors: [
-      "The volt measures potential difference.",
-      "The watt measures power.",
-      "The ohm measures resistance."
+      "Minutes must remain objective and rooted in Public Service Rules, not personal opinions.",
+      "Duplication creates unnecessary clutter and lacks analysis.",
+      "A minute is an internal note for decision-making, not a formal query document."
     ]
   },
   {
     id: "WAEC-APT-CQ-06-003",
     chapterIndex: 5,
-    text: "Water boils at sea level at approximately:",
-    choices: ["50°C", "80°C", "100°C", "120°C"],
-    correct: 2,
-    explanation: "At standard atmospheric pressure, pure water boils at 100°C.",
+    text: "What is the standard security protocol when receiving confidential examination material packets at a Zonal Custodian Depot?",
+    choices: [
+      "Verify outer tamper-evident seals in the presence of security officials and log receipt details immediately",
+      "Open the inner question bundles to verify page counts before storing in the vault",
+      "Store the parcels directly without checking seals until exam morning",
+      "Hand over custody keys to unauthorized security officers for safekeeping"
+    ],
+    correct: 0,
+    explanation: "Confidential material must be verified externally for intact seals, witnessed by authorized personnel, and immediately entered into custody logs without breaking inner seals.",
     distractors: [
-      "This is far below the standard boiling point.",
-      "This is below the standard boiling point of pure water.",
-      "This is above the standard boiling point at sea level."
+      "Opening inner question bundles breaks security protocol prior to exam start time.",
+      "Failing to inspect seal integrity upon arrival exposes the process to undetected tampering.",
+      "Custody keys must remain exclusively with designated WAEC Custodians."
     ]
   },
   {
     id: "WAEC-APT-CQ-06-004",
     chapterIndex: 5,
-    text: "A computer's main permanent storage for programs and data is typically the:",
-    choices: ["RAM", "CPU", "Hard disk / SSD", "Monitor"],
-    correct: 2,
-    explanation: "Hard disks and SSDs provide non-volatile long-term storage; RAM is volatile working memory.",
+    text: "An administrative officer discovers a close relative is sitting for an examination at a centre under the officer's direct supervision. What is the ethical course of action?",
+    choices: [
+      "Formally declare a conflict of interest and request redeployment from supervising that centre",
+      "Say nothing and attempt to remain completely impartial during monitoring",
+      "Inform the relative of key exam security protocols privately",
+      "Delegate supervisory duties to a subordinate unofficially without logging it"
+    ],
+    correct: 0,
+    explanation: "Public sector ethics requires immediate formal declaration of any potential or real conflict of interest to allow re-assignment by superiors.",
     distractors: [
-      "RAM loses its contents when power is removed.",
-      "The CPU processes instructions; it is not primary storage.",
-      "The monitor is an output device."
+      "Concealing a conflict of interest breaches civil service ethical codes.",
+      "Giving private briefings to candidates creates an unfair advantage.",
+      "Unofficial delegation avoids institutional accountability."
     ]
   },
   {
     id: "WAEC-APT-CQ-06-005",
     chapterIndex: 5,
-    text: "Which of the following is a renewable source of energy?",
-    choices: ["Coal", "Petroleum", "Solar", "Natural gas"],
-    correct: 2,
-    explanation: "Solar energy is renewable; coal, petroleum, and natural gas are fossil fuels.",
+    text: "In public sector file indexing, what does the abbreviation 'p.f.' stand for on an official personal folder?",
+    choices: ["Personal File", "Permanent Folder", "Pending Filing", "Primary Folio"],
+    correct: 0,
+    explanation: "In official registry operations, 'p.f.' stands for Personal File.",
     distractors: [
-      "Coal is a non-renewable fossil fuel.",
-      "Petroleum is a non-renewable fossil fuel.",
-      "Natural gas is a non-renewable fossil fuel."
+      "Incorrect terminology in standard administrative registry systems.",
+      "Refers to temporary pending items, not personal folders.",
+      "Folio refers to individual page numbers within a file."
     ]
   }
 ];
