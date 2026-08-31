@@ -1,6 +1,8 @@
 /**
  * HIGH-PRECISION QUIZ APPLICATION CORE DATA ARCHITECT CORE
  * Built exclusively for native browser execution.
+ * Updated for full integration of curated WAEC-APT question bank
+ * (waec-aptitude-test.js) via dynamic ES-module loading.
  */
 
 // --- GLOBAL STORAGE KEYS ---
@@ -9,7 +11,6 @@ const SAVED_EXAMS_KEY = "CH_SAVED_EXAMS";
 const BOOKMARKS_STORAGE_KEY = "CH_BOOKMARKS";
 const NOTES_STORAGE_KEY = "CH_QUESTION_NOTES";
 const OWNED_KEY = "CH_OWNED_PRODUCTS"; 
-
 
 /**
  * Builds the WhatsApp click-to-chat URL for Personalized Training.
@@ -138,7 +139,7 @@ const appState = {
    ========================================================================== */
 
 const CERT_EXAM_METADATA = {
-    // Academic & Secondary
+    // Academic & Secondary – WAEC Recruitment Aptitude (curated 200-q bank)
     "WAEC-APT":   { questionCount: 60,  durationMinutes: 50  },
     "WAECAPT":    { questionCount: 60,  durationMinutes: 50  },
     "JAMB-UTME":  { questionCount: 180, durationMinutes: 120 },
@@ -210,6 +211,11 @@ const _loadedProductQuestionCache = {};
  * caching the result. Returns null (never throws) if there is no dedicated
  * data file yet, or if the import fails for any reason — callers must
  * treat null as "fall back to the legacy generator".
+ *
+ * Supports the WAEC-APT module shape:
+ *   export const PRODUCT_CODE = "WAEC-APT";
+ *   export const questions = [ ... ];
+ *   export default questions;
  */
 async function loadCuratedQuestionBank(product) {
     if (!product) return null;
@@ -222,9 +228,17 @@ async function loadCuratedQuestionBank(product) {
 
     try {
         const module = await import(dataPath);
+        // Prefer default export, then named `questions`, then any array-like export
         const bank = module.default || module.questions || null;
-        if (!bank || bank.length === 0) {
+        if (!bank || !Array.isArray(bank) || bank.length === 0) {
             console.error(`Curated data file for ${product.id} (${dataPath}) loaded but exported no questions.`);
+            return null;
+        }
+        // Lightweight shape guard – ensure every item has the fields the runtime expects
+        const first = bank[0];
+        if (first && (typeof first.id === "undefined" || typeof first.chapterIndex === "undefined" ||
+                      !Array.isArray(first.choices) || typeof first.correct === "undefined")) {
+            console.error(`Curated data file for ${product.id} has unexpected question shape.`);
             return null;
         }
         _loadedProductQuestionCache[dataPath] = bank;
@@ -243,6 +257,11 @@ function shuffleArray(arr) {
     return arr;
 }
 
+/**
+ * Builds a balanced default exam by drawing roughly equal numbers of
+ * questions from every chapter present in the pool. Used for the
+ * “Start Default Test” path so that all six WAEC domains are represented.
+ */
 function generateBalancedDefaultExam(fullPool, targetCount) {
     if (!fullPool || fullPool.length === 0) return [];
 
@@ -565,13 +584,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 });
-
-function clearQuizTimer() {
-    if (appState.quizEngine.timerInterval) {
-        clearInterval(appState.quizEngine.timerInterval);
-        appState.quizEngine.timerInterval = null;
-    }
-}
 
 function clearQuizTimer() {
     if (appState.quizEngine.timerInterval) {
@@ -1274,42 +1286,30 @@ function renderQuestionReviewPane(record) {
               <th>Name</th>
               <th>Objective</th>
               <th>Type</th>
+              <th></th>
             </tr>
-            ${f.showExtraFilters ? `
-            <tr class="qr-search-row">
-              <th></th><th></th><th></th>
-              <th><input type="text" class="qr-search-input" id="qrSearchName" value="${f.searchName}" oninput="setQrSearch('name', this.value)"></th>
-              <th><input type="text" class="qr-search-input" id="qrSearchObj" value="${f.searchObjective}" oninput="setQrSearch('objective', this.value)"></th>
-              <th><input type="text" class="qr-search-input" id="qrSearchType" value="${f.searchType}" oninput="setQrSearch('type', this.value)"></th>
-            </tr>
-            ` : ""}
           </thead>
           <tbody>
             ${filtered.length === 0 ? `
-              <tr><td colspan="6" style="text-align:center;color:#94a3b8;padding:24px;">No questions match the current filters.</td></tr>
+              <tr><td colspan="7" style="text-align:center;color:#94a3b8;padding:24px;">No questions match the current filters.</td></tr>
             ` : filtered.map(q => {
-                const chName = productChapters[q.chapterIndex] || `Chapter ${String((q.chapterIndex || 0) + 1).padStart(2, "0")}`;
-                const shortName = (q.text || "").length > 48 ? (q.text || "").slice(0, 48) + "…" : (q.text || "");
-                const shortObj = chName.length > 22 ? chName.slice(0, 22) + "…" : chName;
-                return `
-                <tr class="qr-row" onclick="openQuestionReviewModal('${q.id}')">
+              const chName = productChapters[q.chapterIndex] || `Chapter ${String((q.chapterIndex || 0) + 1).padStart(2, "0")}`;
+              return `
+                <tr>
                   <td>${q.seq}</td>
-                  <td class="${q.isCorrect ? 'score-ok' : (q.isAttempted ? 'score-bad' : '')}">${q.yourScore}</td>
+                  <td>${q.yourScore}</td>
                   <td>${q.maxScore}</td>
-                  <td class="qr-name-cell" title="${(q.text || "").replace(/"/g, '&quot;')}">${shortName}</td>
-                  <td title="${chName}">${shortObj}</td>
+                  <td class="qr-q-name">${(q.text || "").substring(0, 80)}${(q.text || "").length > 80 ? "…" : ""}</td>
+                  <td>${chName}</td>
                   <td>Multiple Choice</td>
+                  <td><button class="btn-utility" style="font-size:11px;" onclick="openQuestionReviewDetail('${q.id}')">View</button></td>
                 </tr>`;
             }).join("")}
           </tbody>
         </table>
       </div>
 
-      <div class="review-pane-footer qr-footer">
-        <button class="btn-utility" onclick="toggleExtraFilters()">
-          <i class="fa-solid fa-filter"></i> ${f.showExtraFilters ? "Hide Extra Filters" : "Show Extra Filters"}
-        </button>
-        <button class="btn-utility" onclick="resetReviewFilters()"><i class="fa-solid fa-rotate"></i> Reset Filters</button>
+      <div class="review-pane-footer">
         <button class="btn-print" onclick="printQuestionReview()"><i class="fa-solid fa-print"></i> Print</button>
       </div>
     </div>
@@ -1318,19 +1318,33 @@ function renderQuestionReviewPane(record) {
 
 function switchReviewTab(tab) {
     ReviewState.activeTab = tab;
-    ReviewState.filters.advancedOpen = false;
     renderReviewPage();
-}
-
-function toggleGradeHistoryDropdown(e) {
-    e.stopPropagation();
-    const list = document.getElementById("gradeHistoryList");
-    if (list) list.classList.toggle("hidden");
 }
 
 function selectHistoryRecord(idx) {
     ReviewState.activeIndex = idx;
-    ReviewState.filters.advancedOpen = false;
+    renderReviewPage();
+}
+
+function toggleGradeHistoryDropdown(e) {
+    if (e) e.stopPropagation();
+    const list = document.getElementById("gradeHistoryList");
+    if (list) list.classList.toggle("hidden");
+}
+
+function toggleAdvancedFilter(e) {
+    if (e) e.stopPropagation();
+    ReviewState.filters.advancedOpen = !ReviewState.filters.advancedOpen;
+    renderReviewPage();
+}
+
+function setAdvFilter(key, value) {
+    ReviewState.filters[key] = value;
+    renderReviewPage();
+}
+
+function setQuickFilter(value) {
+    ReviewState.filters.quick = value;
     renderReviewPage();
 }
 
@@ -1340,65 +1354,22 @@ function filterObjectivesTable() {
     const yoursQ = (document.getElementById("objSearchYours")?.value || "").toLowerCase();
     const possQ = (document.getElementById("objSearchPossible")?.value || "").toLowerCase();
     document.querySelectorAll("#objectivesTableBody .obj-data-row").forEach(row => {
-        const ok =
-            (!nameQ || (row.dataset.name || "").includes(nameQ)) &&
-            (!pctQ || String(row.dataset.pct).includes(pctQ)) &&
-            (!yoursQ || String(row.dataset.yours).includes(yoursQ)) &&
-            (!possQ || String(row.dataset.possible).includes(possQ));
-        row.style.display = ok ? "" : "none";
+        const match =
+            (row.dataset.name || "").includes(nameQ) &&
+            String(row.dataset.pct || "").includes(pctQ) &&
+            String(row.dataset.yours || "").includes(yoursQ) &&
+            String(row.dataset.possible || "").includes(possQ);
+        row.style.display = match ? "" : "none";
     });
 }
 
-function setQuickFilter(val) {
-    ReviewState.filters.quick = val;
-    renderReviewPage();
-}
-
-function toggleAdvancedFilter(e) {
-    e.stopPropagation();
-    ReviewState.filters.advancedOpen = !ReviewState.filters.advancedOpen;
-    renderReviewPage();
-}
-
-function setAdvFilter(key, val) {
-    ReviewState.filters[key] = val;
-    renderReviewPage();
-}
-
-function setQrSearch(field, val) {
-    if (field === "name") ReviewState.filters.searchName = val;
-    if (field === "objective") ReviewState.filters.searchObjective = val;
-    if (field === "type") ReviewState.filters.searchType = val;
-    renderReviewPage();
-    setTimeout(() => {
-        const id = field === "name" ? "qrSearchName" : field === "objective" ? "qrSearchObj" : "qrSearchType";
-        const el = document.getElementById(id);
-        if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
-    }, 0);
-}
-
-function toggleExtraFilters() {
-    ReviewState.filters.showExtraFilters = !ReviewState.filters.showExtraFilters;
-    renderReviewPage();
-}
-
-function resetReviewFilters() {
-    ReviewState.filters = {
-        quick: "all", advancedOpen: false,
-        marked: "all", attempted: "all", correct: "all", notes: "all",
-        searchName: "", searchObjective: "", searchType: "",
-        showExtraFilters: true
-    };
-    renderReviewPage();
-}
-
-function openQuestionReviewModal(questionId) {
+function openQuestionReviewDetail(questionId) {
     const record = getActiveReviewRecord();
-    if (!record || !record.questions) return;
-    const q = record.questions.find(x => x.id === questionId);
+    if (!record) return;
+    const q = (record.questions || []).find(x => x.id === questionId);
     if (!q) return;
 
-    const notes = JSON.parse(localStorage.getItem(NOTES_STORAGE_KEY)) || {};
+    let notes = JSON.parse(localStorage.getItem(NOTES_STORAGE_KEY)) || {};
     const noteText = notes[q.id] || "";
 
     let modal = document.getElementById("questionReviewDetailModal");
@@ -1410,17 +1381,11 @@ function openQuestionReviewModal(questionId) {
     }
 
     const optionsHtml = (q.choices || []).map((choice, idx) => {
-        let cls = "qr-modal-option";
         let badge = "";
-        if (idx === q.correct) {
-            cls += " correct-option";
-            badge = `<span class="opt-badge correct-badge">Correct</span>`;
-        }
-        if (q.userAnswer === idx) {
-            cls += q.isCorrect ? " user-correct" : " user-incorrect";
-            badge += `<span class="opt-badge user-badge">Your Answer</span>`;
-        }
-        return `<div class="${cls}">
+        if (idx === q.correct) badge = `<span class="opt-badge correct-badge">Correct</span>`;
+        if (q.userAnswer === idx && idx !== q.correct) badge = `<span class="opt-badge wrong-badge">Your Answer</span>`;
+        if (q.userAnswer === idx && idx === q.correct) badge = `<span class="opt-badge correct-badge">Your Answer ✓</span>`;
+        return `<div class="qr-modal-opt ${idx === q.correct ? 'is-correct' : ''} ${q.userAnswer === idx ? 'is-chosen' : ''}">
             <span class="opt-letter">${String.fromCharCode(65 + idx)}</span>
             <span class="opt-text">${choice}</span>
             ${badge}
@@ -1563,7 +1528,7 @@ function renderSavedExamsViewport(container) {
         row.innerHTML = `
             <div class="exam-meta-info">
                 <h4>${exam.productTitle} (${exam.mode.toUpperCase()})</h4>
-                <span class="exam-timestamp"><i class="fa-regular fa-calendar"></i> Saved: ${exam.timestamp} - ${exam.questions.length} Slots Loaded</span>
+                <span class="exam-timestamp"><i class="fa-regular fa-calendar"></i> Saved: ${exam.timestamp} - ${exam.questions.length} slots Loaded</span>
             </div>
             <div style="display:flex; align-items:center; gap:12px;">
                 <button class="btn-primary" style="font-size:12px; padding:6px 14px;" onclick="loadSavedExamState(${exam.id})">Resume Test &rarr;</button>
@@ -1870,6 +1835,7 @@ async function launchQuizWorkspaceView() {
     }
 
     // 1b. Dedicated per-product data file, fetched on demand (new data layer)
+    //     WAEC-APT (and any other mapped product) is loaded here.
     const startBtn = document.getElementById("startTestActionBtn") || document.getElementById("startDefaultTestActionBtn");
     const startBtnOriginalText = startBtn ? startBtn.textContent : null;
     if (filteredPool.length === 0) {
@@ -1910,7 +1876,7 @@ async function launchQuizWorkspaceView() {
     let maxQ;
 
     if (appState.isDefaultTest) {
-        maxQ = meta.questionCount;          // strict standard count
+        maxQ = meta.questionCount;          // strict standard count (60 for WAEC-APT)
     } else {
         maxQ = Math.max(1, parseInt(document.getElementById("maxQuestionsInput")?.value, 10) || 90);
     }
@@ -1918,6 +1884,7 @@ async function launchQuizWorkspaceView() {
     // ---- 3. Generate the exam set ----
     let examQuestions;
     if (appState.isDefaultTest) {
+        // Balanced draw across all 6 WAEC chapters (or whatever chapters exist)
         examQuestions = generateBalancedDefaultExam(filteredPool, maxQ);
     } else {
         examQuestions = filteredPool.slice(0, maxQ);
@@ -1953,7 +1920,7 @@ async function launchQuizWorkspaceView() {
 
         let minutes;
         if (appState.isDefaultTest) {
-            minutes = meta.durationMinutes;   // certification standard duration
+            minutes = meta.durationMinutes;   // certification standard duration (50 min for WAEC-APT)
         } else {
             minutes = parseInt(document.getElementById("examDurationSlider")?.value || 90, 10);
         }
@@ -2381,7 +2348,7 @@ function handleViewAnswer() {
         expBox.innerHTML = `<strong>Correct Option Picked!</strong><br>${currentQ.explanation}`;
     } else {
         expBox.className = "explanation-alert-box incorrect-pane";
-        expBox.innerHTML = `<strong>Incorrect Option Picked.</strong><br>${currentQ.explanation}<br><br><strong>Distractor Analysis:</strong><br>${currentQ.distractors.join('<br>')}`;
+        expBox.innerHTML = `<strong>Incorrect Option Picked.</strong><br>${currentQ.explanation}<br><br><strong>Distractor Analysis:</strong><br>${(currentQ.distractors || []).join('<br>')}`;
     }
 }
 
