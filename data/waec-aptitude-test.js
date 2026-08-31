@@ -2,7 +2,7 @@
    PRODUCT QUESTION BANK — WAEC Recruitment Aptitude Test
    Dynamic ES module for GovPrep. Default export = flat questions array.
    chapterIndex maps to MOCK_PRODUCTS_DATABASE entry WAECAPT.chapters[]
-   Exactly 266 unique questions (Chapter 2 expanded to 100 items).
+   Exactly 266 unique questions (Chapter 3 / chapterIndex 2 expanded to 100 items).
    Correct answers pseudorandomly redistributed across indices 0–3
    for balanced answer-key distribution.
    ========================================================================== */
@@ -1877,6 +1877,1194 @@ export const questions = [
       "Year the first ordinance was passed.",
       "Year the first Registrar took office.",
       "Year Liberia joined."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-035",
+    "chapterIndex": 2,
+    "text": "Which body is the highest decision-making organ of WAEC?",
+    "choices": [
+      "The International Administrative and Finance Committee",
+      "The Council",
+      "The National Office Committee",
+      "The Examinations Committee"
+    ],
+    "correct": 1,
+    "explanation": "The Council is the supreme governing body of WAEC.",
+    "distractors": [
+      "Administrative committees report to Council.",
+      "National offices implement Council policy.",
+      "Examinations Committee handles technical exam matters."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-036",
+    "chapterIndex": 2,
+    "text": "The first Registrar of WAEC was:",
+    "choices": [
+      "Dr. V. B. Amos",
+      "Mr. Kenneth Mellanby",
+      "Dr. G. B. Jeffrey",
+      "Mr. J. A. Adeniyi"
+    ],
+    "correct": 0,
+    "explanation": "Dr. V. B. Amos served as the first Registrar of the West African Examinations Council.",
+    "distractors": [
+      "Mellanby was associated with university development.",
+      "Jeffrey authored the foundational report.",
+      "Adeniyi served later in the Nigerian national office era."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-037",
+    "chapterIndex": 2,
+    "text": "WAEC's institutional emphasis centres on:",
+    "choices": [
+      "Excellence without borders only",
+      "Integrity and service in the conduct of public examinations",
+      "Unity through sports",
+      "Knowledge is power as sole motto"
+    ],
+    "correct": 1,
+    "explanation": "WAEC emphasises integrity and service in the conduct of examinations across member countries.",
+    "distractors": [
+      "Not the primary institutional framing.",
+      "Sports is not the core mandate.",
+      "Not the official sole motto phrasing."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-038",
+    "chapterIndex": 2,
+    "text": "The Head of the National Office (HNO) in Nigeria is based in:",
+    "choices": [
+      "Abuja",
+      "Ibadan",
+      "Yaba, Lagos",
+      "Enugu"
+    ],
+    "correct": 2,
+    "explanation": "The Nigerian Head of National Office is located at Yaba, Lagos.",
+    "distractors": [
+      "Abuja is the federal capital but not the HNO seat.",
+      "Ibadan hosts other educational institutions.",
+      "Enugu is a zonal presence, not the HNO."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-039",
+    "chapterIndex": 2,
+    "text": "Which of the following is a core function of WAEC?",
+    "choices": [
+      "Awarding university degrees",
+      "Conducting public examinations and awarding certificates",
+      "Training teachers exclusively",
+      "Funding state universities"
+    ],
+    "correct": 1,
+    "explanation": "WAEC's primary mandate is the conduct of public examinations and the award of certificates.",
+    "distractors": [
+      "Degree awarding is a university function.",
+      "Teacher training is not WAEC's sole mandate.",
+      "University funding is outside WAEC's remit."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-040",
+    "chapterIndex": 2,
+    "text": "The WAEC ordinance establishing the Council was first enacted around:",
+    "choices": [
+      "1945",
+      "1951–1952",
+      "1960",
+      "1974"
+    ],
+    "correct": 1,
+    "explanation": "The enabling ordinances establishing WAEC were passed in the early 1950s following the Jeffrey Report.",
+    "distractors": [
+      "Pre-dates the Jeffrey process.",
+      "Independence year, not establishment.",
+      "Liberia accession year."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-041",
+    "chapterIndex": 2,
+    "text": "In WAEC structure, International Headquarters is distinct from:",
+    "choices": [
+      "The Council chamber only",
+      "National Offices in member countries",
+      "The Registrar's residence",
+      "The Finance Directorate alone"
+    ],
+    "correct": 1,
+    "explanation": "International Headquarters (Accra) is separate from the National Offices that administer exams in each member country.",
+    "distractors": [
+      "Council meets under HQ coordination.",
+      "Registrar works from HQ.",
+      "Finance is a division within the structure."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-042",
+    "chapterIndex": 2,
+    "text": "The Test Administration Division (TAD) primarily handles:",
+    "choices": [
+      "Syllabus design only",
+      "Logistics, centre management, invigilation and script custody",
+      "Staff payroll exclusively",
+      "Marketing of past questions"
+    ],
+    "correct": 1,
+    "explanation": "TAD manages the operational delivery of examinations including centres, invigilation and secure script handling.",
+    "distractors": [
+      "Syllabus work belongs to Test Development.",
+      "Payroll is a finance/HR function.",
+      "Past-question marketing is not a core TAD duty."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-043",
+    "chapterIndex": 2,
+    "text": "A candidate who wishes to challenge a result may typically:",
+    "choices": [
+      "Rewrite the entire certificate without process",
+      "Apply for a formal result review or re-mark within stipulated rules",
+      "Demand automatic upgrade of grades",
+      "Sue the invigilator personally first"
+    ],
+    "correct": 1,
+    "explanation": "WAEC provides regulated channels for result queries and re-marking subject to fees and timelines.",
+    "distractors": [
+      "No automatic rewrite without process.",
+      "Grades are not arbitrarily upgraded.",
+      "Personal suits are not the first institutional step."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-044",
+    "chapterIndex": 2,
+    "text": "Public Service Rules in Nigeria govern primarily:",
+    "choices": [
+      "Private company employees only",
+      "Federal and state civil servants' conditions of service",
+      "University students exclusively",
+      "Military officers alone"
+    ],
+    "correct": 1,
+    "explanation": "The Public Service Rules regulate appointment, discipline, leave and related conditions for civil servants.",
+    "distractors": [
+      "Private sector has separate labour law.",
+      "Students are under educational regulations.",
+      "Armed forces have distinct regulations."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-045",
+    "chapterIndex": 2,
+    "text": "Which of these is an example of examination malpractice?",
+    "choices": [
+      "Arriving early to the centre",
+      "Impersonation of a registered candidate",
+      "Using an approved calculator where permitted",
+      "Bringing a transparent water bottle"
+    ],
+    "correct": 1,
+    "explanation": "Impersonation is a serious form of examination malpractice.",
+    "distractors": [
+      "Early arrival is encouraged.",
+      "Approved aids are allowed.",
+      "Transparent bottles are often permitted under rules."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-046",
+    "chapterIndex": 2,
+    "text": "The Federal Character principle in Nigerian public service aims to:",
+    "choices": [
+      "Promote ethnic and geopolitical balance in appointments",
+      "Ensure only one region dominates",
+      "Abolish merit entirely",
+      "Privatise all ministries"
+    ],
+    "correct": 0,
+    "explanation": "Federal Character seeks equitable representation across Nigeria's diverse groups in public appointments.",
+    "distractors": [
+      "Opposite of the principle.",
+      "Merit remains relevant alongside balance.",
+      "Not a privatisation mandate."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-047",
+    "chapterIndex": 2,
+    "text": "WAEC certificates are widely recognised for:",
+    "choices": [
+      "Only military enlistment",
+      "Admission to tertiary institutions and employment screening across West Africa",
+      "Replacing all professional licences",
+      "Voting eligibility only"
+    ],
+    "correct": 1,
+    "explanation": "WASSCE and related WAEC certificates are accepted for tertiary admission and many employment processes.",
+    "distractors": [
+      "Not limited to military.",
+      "Professional licences have separate bodies.",
+      "Not a voting credential."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-048",
+    "chapterIndex": 2,
+    "text": "An official query in the public service is used to:",
+    "choices": [
+      "Congratulate staff",
+      "Formally request explanation for alleged misconduct",
+      "Approve annual leave",
+      "Transfer an officer without reason"
+    ],
+    "correct": 1,
+    "explanation": "A query is a formal disciplinary instrument seeking explanation for alleged breaches of rules.",
+    "distractors": [
+      "Commendation uses different instruments.",
+      "Leave has its own process.",
+      "Transfers follow administrative procedures."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-049",
+    "chapterIndex": 2,
+    "text": "The acronym WASSCE stands for:",
+    "choices": [
+      "West African Senior School Certificate Examination",
+      "West African Secondary School Continuous Evaluation",
+      "World Association of Secondary School Certificates",
+      "West African Science and Social Certificate Exam"
+    ],
+    "correct": 0,
+    "explanation": "WASSCE is the West African Senior School Certificate Examination conducted by WAEC.",
+    "distractors": [
+      "Incorrect expansion.",
+      "Not a world association.",
+      "Not limited to science/social only."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-050",
+    "chapterIndex": 2,
+    "text": "Dual control of examination materials means:",
+    "choices": [
+      "Any two staff may open packets freely",
+      "At least two authorised persons jointly control custody and opening of secure materials",
+      "Candidates control their own scripts",
+      "Only security guards hold keys"
+    ],
+    "correct": 1,
+    "explanation": "Dual control requires two authorised custodians for integrity of sealed exam materials.",
+    "distractors": [
+      "Unauthorised access is prohibited.",
+      "Candidates do not control live materials.",
+      "Security supports but does not replace authorised dual control."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-051",
+    "chapterIndex": 2,
+    "text": "Which committee typically deals with examination irregularities and malpractice cases?",
+    "choices": [
+      "Sports Committee",
+      "Examinations and/or Malpractice Committee (as constituted by Council)",
+      "Catering Committee",
+      "Transport Union"
+    ],
+    "correct": 1,
+    "explanation": "Council constitutes committees that investigate and recommend sanctions for malpractice.",
+    "distractors": [
+      "Irrelevant to exam integrity.",
+      "Not related to exam process.",
+      "Not a WAEC organ."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-052",
+    "chapterIndex": 2,
+    "text": "In registry practice, a closed file means:",
+    "choices": [
+      "A file permanently open to the public",
+      "A file whose active correspondence has ended and is stored per retention rules",
+      "A file never created",
+      "A file destroyed the same day"
+    ],
+    "correct": 1,
+    "explanation": "Closed files are completed for current action and retained according to schedules.",
+    "distractors": [
+      "Access remains controlled.",
+      "Never-opened files are not closed in this sense.",
+      "Destruction follows retention, not immediate closure."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-053",
+    "chapterIndex": 2,
+    "text": "The principle of anonymity in marking scripts helps to:",
+    "choices": [
+      "Allow markers to favour known candidates",
+      "Reduce bias by concealing candidate identity from markers",
+      "Speed printing of certificates only",
+      "Increase the cost of exams"
+    ],
+    "correct": 1,
+    "explanation": "Anonymous marking protects fairness by preventing identification of candidates by markers.",
+    "distractors": [
+      "Opposite of the goal.",
+      "Not the primary purpose.",
+      "Cost is secondary to integrity."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-054",
+    "chapterIndex": 2,
+    "text": "Which of the following best describes item banking in WAEC context?",
+    "choices": [
+      "Storing physical bank notes",
+      "Maintaining a secure pool of vetted examination questions for future use",
+      "Banking candidate fees only",
+      "Storing answer booklets in a commercial bank"
+    ],
+    "correct": 1,
+    "explanation": "Item banking is the secure storage and management of pre-tested examination items.",
+    "distractors": [
+      "Literal banking is unrelated.",
+      "Fees are financial administration.",
+      "Scripts go to marking centres, not commercial banks."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-055",
+    "chapterIndex": 2,
+    "text": "A zonal office of WAEC in Nigeria typically supports:",
+    "choices": [
+      "International diplomacy only",
+      "Regional coordination of exam administration within assigned states",
+      "Running a private university",
+      "Issuing passports"
+    ],
+    "correct": 1,
+    "explanation": "Zonal offices coordinate examination logistics and liaison within their geographic zones.",
+    "distractors": [
+      "Not a diplomatic mission.",
+      "Not a university operator.",
+      "Passports are immigration functions."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-056",
+    "chapterIndex": 2,
+    "text": "Under PSR, interdiction of an officer usually occurs when:",
+    "choices": [
+      "The officer is promoted",
+      "There is a serious allegation warranting temporary removal from duty pending investigation",
+      "The officer takes annual leave",
+      "The officer retires voluntarily"
+    ],
+    "correct": 1,
+    "explanation": "Interdiction is a temporary removal from official duties pending determination of serious allegations.",
+    "distractors": [
+      "Promotion is positive advancement.",
+      "Leave is a normal entitlement.",
+      "Retirement ends service."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-057",
+    "chapterIndex": 2,
+    "text": "The Registrar of WAEC is accountable primarily to:",
+    "choices": [
+      "Individual candidates",
+      "The Council",
+      "State governors only",
+      "Private tutors"
+    ],
+    "correct": 1,
+    "explanation": "The Registrar/Chief Executive reports to and implements the decisions of the Council.",
+    "distractors": [
+      "Candidates are service users, not the governing authority.",
+      "Governors do not supervise WAEC HQ.",
+      "Tutors are external."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-058",
+    "chapterIndex": 2,
+    "text": "Syllabus review in WAEC is important because:",
+    "choices": [
+      "It increases exam fees automatically",
+      "It keeps examination content aligned with curriculum changes and educational goals",
+      "It eliminates all practical papers",
+      "It replaces national curricula entirely"
+    ],
+    "correct": 1,
+    "explanation": "Periodic syllabus review ensures relevance and alignment with member countries' educational systems.",
+    "distractors": [
+      "Fees are a separate policy matter.",
+      "Practicals remain where appropriate.",
+      "National curricula remain the domain of education ministries."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-059",
+    "chapterIndex": 2,
+    "text": "Confidentiality of live question papers must be maintained until:",
+    "choices": [
+      "The papers are printed",
+      "The official start of the examination session",
+      "Results are released",
+      "Candidates request early sight"
+    ],
+    "correct": 1,
+    "explanation": "Live papers remain under strict security until the authorised examination start time.",
+    "distractors": [
+      "Printing is still under security.",
+      "Results come later.",
+      "Early access is malpractice."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-060",
+    "chapterIndex": 2,
+    "text": "Which of these is a legitimate reason for special consideration in examinations?",
+    "choices": [
+      "A candidate forgot to study",
+      "Documented temporary disability or adverse circumstance under approved rules",
+      "Preference for a higher grade",
+      "Late registration without cause"
+    ],
+    "correct": 1,
+    "explanation": "Special consideration addresses verified adverse circumstances affecting performance under published rules.",
+    "distractors": [
+      "Lack of study is not grounds.",
+      "Grade preference is not a criterion.",
+      "Late registration has separate rules."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-061",
+    "chapterIndex": 2,
+    "text": "The National Office of WAEC in a member country is headed by:",
+    "choices": [
+      "The President of the country",
+      "The Head of National Office (HNO)",
+      "The Minister of Education alone",
+      "A rotating student representative"
+    ],
+    "correct": 1,
+    "explanation": "Each National Office is led by a Head of National Office appointed under WAEC structures.",
+    "distractors": [
+      "Political heads do not run the office day-to-day.",
+      "The Minister provides policy context, not operational headship of WAEC NO.",
+      "Students do not head the office."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-062",
+    "chapterIndex": 2,
+    "text": "Award of WAEC certificates is based on:",
+    "choices": [
+      "Payment of a bribe",
+      "Performance in the prescribed examinations under regulated conditions",
+      "Length of hair",
+      "Political party membership"
+    ],
+    "correct": 1,
+    "explanation": "Certificates are awarded on the basis of examined performance under WAEC regulations.",
+    "distractors": [
+      "Corruption is prohibited.",
+      "Irrelevant personal attributes.",
+      "Politics is not a criterion."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-063",
+    "chapterIndex": 2,
+    "text": "In public administration, minuting on a file means:",
+    "choices": [
+      "Destroying the file",
+      "Writing official comments and recommendations that advance decision-making",
+      "Counting the pages only",
+      "Sending the file to the press"
+    ],
+    "correct": 1,
+    "explanation": "Minuting is the internal written record of observations and recommended actions on official files.",
+    "distractors": [
+      "Destruction is separate.",
+      "Page count is administrative detail.",
+      "Press is external communication."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-064",
+    "chapterIndex": 2,
+    "text": "Which practice strengthens assessment security?",
+    "choices": [
+      "Leaving packets unsealed overnight",
+      "Sealed packets, dual custody, attendance registers and chain-of-custody logs",
+      "Sharing questions on social media",
+      "Allowing phones in the hall freely"
+    ],
+    "correct": 1,
+    "explanation": "Physical seals, dual control, registers and documented custody protect examination integrity.",
+    "distractors": [
+      "Unsealed storage is a breach.",
+      "Public leakage is malpractice.",
+      "Phones are typically prohibited."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-065",
+    "chapterIndex": 2,
+    "text": "The Elliot Commission is historically associated with:",
+    "choices": [
+      "Road construction",
+      "Higher education development in West Africa",
+      "Currency redesign",
+      "Military training alone"
+    ],
+    "correct": 1,
+    "explanation": "The Elliot Commission contributed to recommendations on university education in British West Africa.",
+    "distractors": [
+      "Not a roads body.",
+      "Not a central bank function.",
+      "Not primarily military."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-066",
+    "chapterIndex": 2,
+    "text": "A candidate found with a mobile phone in the examination hall may face:",
+    "choices": [
+      "Automatic extra marks",
+      "Cancellation of results among other prescribed sanctions",
+      "Promotion to next class",
+      "A gift voucher"
+    ],
+    "correct": 1,
+    "explanation": "Unauthorised electronic devices commonly attract cancellation of results and other penalties.",
+    "distractors": [
+      "Not a reward.",
+      "Not academic promotion.",
+      "Not a prize."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-067",
+    "chapterIndex": 2,
+    "text": "The concept of fair hearing in malpractice cases requires that:",
+    "choices": [
+      "Only the invigilator is heard",
+      "The accused is given opportunity to respond before final decision",
+      "No investigation is done",
+      "Results are cancelled without notice"
+    ],
+    "correct": 1,
+    "explanation": "Due process requires that candidates can respond to allegations before determination.",
+    "distractors": [
+      "Both sides of evidence matter.",
+      "Investigation is necessary.",
+      "Notice and response are part of fairness."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-068",
+    "chapterIndex": 2,
+    "text": "WAEC collaborates with national education ministries primarily to:",
+    "choices": [
+      "Ignore local curricula",
+      "Align examinations with national education policies and standards",
+      "Replace ministries entirely",
+      "Set national budgets"
+    ],
+    "correct": 1,
+    "explanation": "Collaboration ensures examinations support and reflect national educational frameworks.",
+    "distractors": [
+      "Alignment is the goal.",
+      "Ministries retain policy roles.",
+      "Budgeting is governmental, not WAEC's primary role."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-069",
+    "chapterIndex": 2,
+    "text": "An official letter from a Head of National Office should normally use:",
+    "choices": [
+      "Personal scrap paper",
+      "Official letter-headed stationery of the Council",
+      "A candidate answer booklet",
+      "Social media DM only"
+    ],
+    "correct": 1,
+    "explanation": "Official correspondence uses authorised letter-head to establish authenticity.",
+    "distractors": [
+      "Lacks official identity.",
+      "Answer booklets are exam materials.",
+      "Informal channels are inappropriate for official acts."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-070",
+    "chapterIndex": 2,
+    "text": "The term giraffing in exam malpractice slang refers to:",
+    "choices": [
+      "Writing large letters",
+      "Stretching to look at another candidate's work",
+      "Arriving on a tall vehicle",
+      "Using a giraffe logo"
+    ],
+    "correct": 1,
+    "explanation": "Giraffing describes attempting to copy by looking at a neighbour's script.",
+    "distractors": [
+      "Literal and unrelated.",
+      "Not the recognised meaning.",
+      "Unrelated to the offence."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-071",
+    "chapterIndex": 2,
+    "text": "De-recognition of a school by WAEC typically means:",
+    "choices": [
+      "Extra funding for the school",
+      "The school may not present candidates for a stated period",
+      "Automatic upgrade of all results",
+      "Appointment of the principal as HNO"
+    ],
+    "correct": 1,
+    "explanation": "De-recognition bars the school from entering candidates for a specified period as a sanction.",
+    "distractors": [
+      "It is punitive, not rewarding.",
+      "Not a results upgrade.",
+      "Not a promotion of staff."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-072",
+    "chapterIndex": 2,
+    "text": "Chain-of-custody logs for exam materials help to:",
+    "choices": [
+      "Increase parcel weight",
+      "Provide an auditable record of handling to deter and detect tampering",
+      "Allow public signing for packets",
+      "Replace the need for seals"
+    ],
+    "correct": 1,
+    "explanation": "Documented custody supports accountability and integrity of materials.",
+    "distractors": [
+      "Irrelevant purpose.",
+      "Access remains restricted.",
+      "Seals remain essential."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-073",
+    "chapterIndex": 2,
+    "text": "Unauthorised alteration of official examination records is:",
+    "choices": [
+      "A minor clerical matter needing no action",
+      "Serious misconduct that may attract disciplinary and criminal sanctions",
+      "Professional excellence",
+      "Routine without authorisation"
+    ],
+    "correct": 1,
+    "explanation": "Altering official records without authority is a grave offence under public service and criminal law frameworks.",
+    "distractors": [
+      "Gravity is high.",
+      "Opposite of excellence.",
+      "Routine updates require proper authorisation."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-074",
+    "chapterIndex": 2,
+    "text": "When drafting a public service query, language should be:",
+    "choices": [
+      "Emotional and abusive",
+      "Factual, precise and professional",
+      "Written in an unknown language",
+      "Deliberately vague"
+    ],
+    "correct": 1,
+    "explanation": "Queries must state alleged facts clearly so the officer can respond; professionalism requires restraint.",
+    "distractors": [
+      "Emotion undermines process.",
+      "Recipient must understand the charge.",
+      "Vagueness prevents fair response."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-075",
+    "chapterIndex": 2,
+    "text": "The ultimate goal of assessment security in WAEC is to:",
+    "choices": [
+      "Maximise failure rates",
+      "Protect integrity, fairness and credibility of examinations and certificates",
+      "Create barriers for honest candidates",
+      "Increase workload without purpose"
+    ],
+    "correct": 1,
+    "explanation": "Security and ethics exist so that results remain trustworthy and honest candidates are not disadvantaged.",
+    "distractors": [
+      "Fairness, not failure maximisation.",
+      "Security should facilitate legitimate participation.",
+      "Workload is not an end in itself."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-076",
+    "chapterIndex": 2,
+    "text": "Which of the following is a duty of an invigilator?",
+    "choices": [
+      "Provide answers to candidates",
+      "Ensure fair conduct, enforce rules and protect exam integrity",
+      "Leave the hall unattended for long periods",
+      "Collect personal gifts from candidates"
+    ],
+    "correct": 1,
+    "explanation": "Invigilators safeguard the examination environment and enforce regulations.",
+    "distractors": [
+      "Assisting with answers is malpractice.",
+      "Attendance is required.",
+      "Gifts compromise integrity."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-077",
+    "chapterIndex": 2,
+    "text": "Results of WAEC examinations are typically released through:",
+    "choices": [
+      "Only word of mouth",
+      "Official channels including online portals and schools as prescribed",
+      "Private WhatsApp groups of invigilators",
+      "Unverified social media pages only"
+    ],
+    "correct": 1,
+    "explanation": "WAEC publishes results via authorised platforms and institutional channels.",
+    "distractors": [
+      "Informal channels are unreliable.",
+      "Not official.",
+      "Unofficial pages risk fraud."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-078",
+    "chapterIndex": 2,
+    "text": "A live question paper is one that:",
+    "choices": [
+      "Has already been written by all candidates",
+      "Is still under security for an upcoming or ongoing examination session",
+      "Is a past paper sold publicly",
+      "Has been cancelled permanently"
+    ],
+    "correct": 1,
+    "explanation": "Live papers are those not yet fully administered and still subject to strict security.",
+    "distractors": [
+      "Completed sessions are no longer live in the same sense.",
+      "Past papers are released after use.",
+      "Cancelled papers follow separate handling."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-079",
+    "chapterIndex": 2,
+    "text": "In the context of WAEC, BECE refers to:",
+    "choices": [
+      "Bachelor of Education Certificate Examination",
+      "Basic Education Certificate Examination",
+      "Business Enterprise Certificate Exam",
+      "Board of Examiners Continuous Evaluation"
+    ],
+    "correct": 1,
+    "explanation": "BECE is the Basic Education Certificate Examination conducted in some member systems under WAEC arrangements.",
+    "distractors": [
+      "Incorrect expansion.",
+      "Not a business exam.",
+      "Not the BECE meaning."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-080",
+    "chapterIndex": 2,
+    "text": "Staff of WAEC are expected to observe:",
+    "choices": [
+      "Political partisanship in marking",
+      "High ethical standards, confidentiality and impartiality",
+      "Sharing of live questions with friends",
+      "Acceptance of gifts that influence decisions"
+    ],
+    "correct": 1,
+    "explanation": "Public examination officials must maintain integrity, confidentiality and neutrality.",
+    "distractors": [
+      "Partisanship is prohibited.",
+      "Leakage is malpractice.",
+      "Gift influence is corruption."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-081",
+    "chapterIndex": 2,
+    "text": "The Ashby Commission is associated with:",
+    "choices": [
+      "Post-independence higher education planning in Nigeria",
+      "Building the first WAEC HQ only",
+      "Designing traffic laws",
+      "Creating the PSR document alone"
+    ],
+    "correct": 0,
+    "explanation": "The Ashby Commission (1960) made recommendations on higher education development in Nigeria.",
+    "distractors": [
+      "HQ location is separate history.",
+      "Traffic is FRSC domain.",
+      "PSR evolved through public service reforms."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-082",
+    "chapterIndex": 2,
+    "text": "The Public Service Rules require civil servants to:",
+    "choices": [
+      "Engage in private business during official hours without approval",
+      "Uphold integrity, loyalty and efficient service",
+      "Disclose confidential files to the press freely",
+      "Ignore superior lawful instructions"
+    ],
+    "correct": 1,
+    "explanation": "Core values include integrity, loyalty to the service and efficient performance of duties.",
+    "distractors": [
+      "Unauthorised private business is restricted.",
+      "Confidentiality is mandatory.",
+      "Lawful instructions must be obeyed."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-083",
+    "chapterIndex": 2,
+    "text": "An examination centre is de-recognised mainly because of:",
+    "choices": [
+      "High pass rates",
+      "Serious and/or repeated examination malpractice or non-compliance",
+      "Beautiful buildings",
+      "Large number of candidates alone"
+    ],
+    "correct": 1,
+    "explanation": "Sanctions including de-recognition respond to integrity failures and regulatory breaches.",
+    "distractors": [
+      "Success is not punished.",
+      "Aesthetics are irrelevant.",
+      "Volume alone is not the cause."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-084",
+    "chapterIndex": 2,
+    "text": "Which division is most closely associated with scoring and standardisation of results?",
+    "choices": [
+      "Test Development / Research and related technical units",
+      "Catering services",
+      "Estate management alone",
+      "Transport unit only"
+    ],
+    "correct": 0,
+    "explanation": "Technical divisions handle item analysis, scoring frameworks and standardisation processes.",
+    "distractors": [
+      "Support services only.",
+      "Facilities management.",
+      "Logistics support only."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-085",
+    "chapterIndex": 2,
+    "text": "Candidates with approved disabilities may be granted:",
+    "choices": [
+      "Unlimited unmarked extra papers without rules",
+      "Reasonable accommodations under WAEC special needs provisions",
+      "Automatic distinction grades",
+      "Exemption from all rules"
+    ],
+    "correct": 1,
+    "explanation": "Special needs arrangements provide fair access within regulated accommodations.",
+    "distractors": [
+      "Accommodations are structured, not unlimited.",
+      "Grades still reflect performance.",
+      "Rules still apply."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-086",
+    "chapterIndex": 2,
+    "text": "The phrase public service in the WAEC recruitment context emphasises:",
+    "choices": [
+      "Private profit maximisation",
+      "Service delivery, accountability and ethical conduct in government institutions",
+      "Political campaigning during office hours",
+      "Ignoring citizens' needs"
+    ],
+    "correct": 1,
+    "explanation": "Public service ethos centres on serving the public interest with integrity and accountability.",
+    "distractors": [
+      "Opposite of public mandate.",
+      "Campaigning is restricted.",
+      "Citizen service is central."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-087",
+    "chapterIndex": 2,
+    "text": "Script collection after an examination must be:",
+    "choices": [
+      "Left in open classrooms overnight",
+      "Counted, sealed and transported securely to designated centres",
+      "Given to candidates to take home",
+      "Discarded immediately"
+    ],
+    "correct": 1,
+    "explanation": "Secure accounting and transit of scripts prevent loss, substitution or tampering.",
+    "distractors": [
+      "Unattended scripts risk integrity.",
+      "Candidates must not retain scripts.",
+      "Scripts are required for marking."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-088",
+    "chapterIndex": 2,
+    "text": "Which of the following undermines certificate credibility?",
+    "choices": [
+      "Secure administration and fair marking",
+      "Widespread leakage of question papers before the exam",
+      "Transparent results processes",
+      "Independent invigilation"
+    ],
+    "correct": 1,
+    "explanation": "Pre-exam leakage destroys the validity of results and public trust in certificates.",
+    "distractors": [
+      "These strengthen credibility.",
+      "Transparency builds trust.",
+      "Independent invigilation protects integrity."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-089",
+    "chapterIndex": 2,
+    "text": "The Council of WAEC includes representation that reflects:",
+    "choices": [
+      "Only one member country",
+      "Member countries and educational stakeholders as provided in the constitution",
+      "Only private tutors",
+      "Only candidates"
+    ],
+    "correct": 1,
+    "explanation": "Council composition reflects the multi-country nature of WAEC and educational governance needs.",
+    "distractors": [
+      "Multi-country membership is foundational.",
+      "Tutors are not the governing body.",
+      "Candidates are examinees, not Council members."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-090",
+    "chapterIndex": 2,
+    "text": "A folio in registry practice refers to:",
+    "choices": [
+      "The date only",
+      "A numbered page or sheet within an official file",
+      "The security classification alone",
+      "The file owner's nickname"
+    ],
+    "correct": 1,
+    "explanation": "Folios are sequential pages that make up the contents of a file.",
+    "distractors": [
+      "Date is recorded separately.",
+      "Classification is marked independently.",
+      "Owner name is different metadata."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-091",
+    "chapterIndex": 2,
+    "text": "Ethical duty when observing malpractice is to:",
+    "choices": [
+      "Conceal it to avoid trouble",
+      "Report through prescribed channels without delay",
+      "Negotiate a private settlement",
+      "Participate to gain favour"
+    ],
+    "correct": 1,
+    "explanation": "Officials must report irregularities to protect examination integrity.",
+    "distractors": [
+      "Concealment is misconduct.",
+      "Private settlements undermine rules.",
+      "Participation is an offence."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-092",
+    "chapterIndex": 2,
+    "text": "WAEC's presence in five countries supports:",
+    "choices": [
+      "Fragmented, non-comparable certificates",
+      "Regional comparability of secondary education standards",
+      "Elimination of all national curricula",
+      "Only sports competitions"
+    ],
+    "correct": 1,
+    "explanation": "A common examination framework supports comparable standards across member countries.",
+    "distractors": [
+      "Comparability is a strength.",
+      "National curricula still exist.",
+      "Education is the core, not sports."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-093",
+    "chapterIndex": 2,
+    "text": "Which action is appropriate if a seal on a question packet is found broken before the exam?",
+    "choices": [
+      "Ignore and proceed",
+      "Report immediately, document, and follow contingency security procedures",
+      "Open privately and redistribute",
+      "Blame the nearest person without investigation"
+    ],
+    "correct": 1,
+    "explanation": "Any seal breach must be reported, documented and handled under contingency protocols.",
+    "distractors": [
+      "Ignoring is misconduct.",
+      "Unauthorised opening compounds risk.",
+      "Premature blame without process is improper."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-094",
+    "chapterIndex": 2,
+    "text": "The Registrar to Council role involves:",
+    "choices": [
+      "Only driving official vehicles",
+      "Chief executive functions including implementation of Council decisions",
+      "Marking all scripts personally",
+      "Setting national tax rates"
+    ],
+    "correct": 1,
+    "explanation": "The Registrar is the chief executive officer responsible for implementing Council policy and running the organisation.",
+    "distractors": [
+      "Support roles exist separately.",
+      "Marking is distributed.",
+      "Tax is a government fiscal function."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-095",
+    "chapterIndex": 2,
+    "text": "In exam administration, an attendance register primarily records:",
+    "choices": [
+      "Invigilators' lunch preferences",
+      "Which registered candidates were present and sat the paper",
+      "School marketing contacts",
+      "Replacement for photo ID alone"
+    ],
+    "correct": 1,
+    "explanation": "Attendance registers provide official evidence of presence for the examination session.",
+    "distractors": [
+      "Irrelevant detail.",
+      "Not a marketing tool.",
+      "ID remains necessary; register complements it."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-096",
+    "chapterIndex": 2,
+    "text": "Collusion among candidates during an exam is:",
+    "choices": [
+      "Encouraged collaborative learning",
+      "A form of examination malpractice",
+      "Irrelevant to integrity",
+      "Required by regulations"
+    ],
+    "correct": 1,
+    "explanation": "Mutual assistance that violates individual assessment conditions is malpractice.",
+    "distractors": [
+      "Not permitted under timed individual conditions.",
+      "It threatens validity.",
+      "Regulations prohibit it."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-097",
+    "chapterIndex": 2,
+    "text": "A public officer offered a gift by a contractor seeking favour should:",
+    "choices": [
+      "Accept quietly and award the contract",
+      "Decline and report in line with ethical guidelines",
+      "Demand a larger gift",
+      "Accept without disclosure"
+    ],
+    "correct": 1,
+    "explanation": "Gifts that could influence decisions must be refused; transparency is required.",
+    "distractors": [
+      "This is corruption.",
+      "Extortion is misconduct.",
+      "Non-disclosure compounds the breach."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-098",
+    "chapterIndex": 2,
+    "text": "Standardisation of scores in large-scale testing helps to:",
+    "choices": [
+      "Make results incomparable across years",
+      "Maintain fairness and comparability of grades across forms and years",
+      "Eliminate all statistics",
+      "Guarantee every candidate a distinction"
+    ],
+    "correct": 1,
+    "explanation": "Standardisation supports equitable interpretation of scores across different papers and sessions.",
+    "distractors": [
+      "Opposite of the goal.",
+      "Statistics are essential tools.",
+      "Standards remain performance-based."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-099",
+    "chapterIndex": 2,
+    "text": "Which best describes WAEC's relationship with member governments?",
+    "choices": [
+      "WAEC replaces ministries of education",
+      "WAEC is an inter-governmental examining body serving member countries' education systems",
+      "WAEC is a private profit-only company with no public mandate",
+      "WAEC only operates in one city"
+    ],
+    "correct": 1,
+    "explanation": "WAEC is established by the member countries to provide common examining services for their education systems.",
+    "distractors": [
+      "Ministries retain policy roles.",
+      "Public mandate is central.",
+      "Multi-country and multi-office structure exists."
+    ]
+  },
+  {
+    "id": "WAEC-APT-CQ-03-100",
+    "chapterIndex": 2,
+    "text": "Office administration in a WAEC National Office includes:",
+    "choices": [
+      "Ignoring correspondence",
+      "Proper filing, minuting, secure handling of materials and timely processing of official business",
+      "Personal use of official vehicles only",
+      "Publishing live questions early"
+    ],
+    "correct": 1,
+    "explanation": "Effective office administration underpins secure and efficient delivery of the examination function.",
+    "distractors": [
+      "Correspondence must be processed.",
+      "Vehicles serve official duties under rules.",
+      "Leakage is prohibited."
     ]
   },
   {
