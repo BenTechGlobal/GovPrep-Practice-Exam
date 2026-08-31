@@ -2,7 +2,7 @@
    PRODUCT QUESTION BANK — WAEC Recruitment Aptitude Test
    Dynamic ES module for GovPrep. Default export = flat questions array.
    chapterIndex maps to MOCK_PRODUCTS_DATABASE entry WAECAPT.chapters[]
-   Exactly 200 unique questions (≈33–34 per chapter).
+   Exactly 266 unique questions (Chapter 2 expanded to 100 items).
    Correct answers pseudorandomly redistributed across indices 0–3
    for balanced answer-key distribution.
    ========================================================================== */
@@ -17,14 +17,14 @@ export const PRODUCT_CODE = "WAEC-APT";
 export const TEST_CONFIG = {
   productCode: "WAEC-APT",
   title: "WAEC Recruitment Aptitude Test",
-  totalQuestions: 200,
+  totalQuestions: 266,
   chapters: 6,
   /** Questions allocated per chapter (chapterIndex order) */
-  chapterWeights: [34, 34, 34, 34, 32, 32],
+  chapterWeights: [34, 34, 100, 34, 32, 32],
   durationMinutes: 120,
   durationSeconds: 7200,
   passingScorePercent: 50,
-  passingScoreAbsolute: 100,
+  passingScoreAbsolute: 133,
   maxAttempts: 3,
   shuffleQuestions: true,
   /** Choices are already pre-shuffled in the bank; set false to avoid double-shuffle */
@@ -35,7 +35,7 @@ export const TEST_CONFIG = {
   sections: [
     { chapterIndex: 0, name: "Quantitative Reasoning & Advanced Numeracy", questionCount: 34 },
     { chapterIndex: 1, name: "Verbal Reasoning & English Comprehension", questionCount: 34 },
-    { chapterIndex: 2, name: "WAEC Institutional Mandate, History & Public Service", questionCount: 34 },
+    { chapterIndex: 2, name: "WAEC Institutional Mandate, History & Public Service", questionCount: 100 },
     { chapterIndex: 3, name: "Logical & Abstract Reasoning", questionCount: 34 },
     { chapterIndex: 4, name: "Educational Measurement & Psychometrics", questionCount: 32 },
     { chapterIndex: 5, name: "Assessment Security, Ethics & Office Administration", questionCount: 32 }
