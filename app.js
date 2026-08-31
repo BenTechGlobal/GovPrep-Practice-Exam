@@ -171,10 +171,10 @@ const CERT_EXAM_METADATA = {
 };
 
 function getExamMetadata(product) {
-    if (!product) return { questionCount: 60, durationMinutes: 50 };
+    if (!product) return { questionCount: 100, durationMinutes: 60 };
     return CERT_EXAM_METADATA[product.code] ||
            CERT_EXAM_METADATA[product.id]   ||
-           { questionCount: 60, durationMinutes: 50 };
+           { questionCount: 100, durationMinutes: 60 };
 }
 
 /* ==========================================================================
@@ -333,18 +333,18 @@ function loadQuiz(certification, chapterKey) {
 const MOCK_PRODUCTS_DATABASE = [
     {
         id: "WAECAPT",
-        title: "WAEC Aptitude & General Paper Practice",
+        title: "WAEC Aptitude Test ( Recruitment )",
         code: "WAEC-APT",
         imageIcon: "fa-graduation-cap",
         badge: "WAEC",
-        description: "60 questions · 50 minutes. Speed & accuracy focus for West African Senior School Certificate candidates.",
+        description: "100 questions · 60 minutes. Speed & accuracy focus for WAEC Aptitude Test.",
         chapters: [
-            "Chapter 1: Quantitative Reasoning & Numeracy",
-            "Chapter 2: Verbal Reasoning & English Usage",
-            "Chapter 3: General Knowledge & Current Affairs",
+            "Chapter 1: Quantitative Reasoning & Advanced Numeracy",
+            "Chapter 2: Verbal Reasoning & English Comprehension",
+            "Chapter 3: WAEC Institutional Mandate, History & Public Service",
             "Chapter 4: Logical & Abstract Reasoning",
-            "Chapter 5: Civic Education & National Values",
-            "Chapter 6: Basic Science & Everyday Technology"
+            "Chapter 5: Educational Measurement & Psychometrics",
+            "Chapter 6: Assessment Security, Ethics & Office Administration"
         ]
     },
     {
