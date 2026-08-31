@@ -1887,7 +1887,9 @@ async function launchQuizWorkspaceView() {
         // Balanced draw across all 6 WAEC chapters (or whatever chapters exist)
         examQuestions = generateBalancedDefaultExam(filteredPool, maxQ);
     } else {
-        examQuestions = filteredPool.slice(0, maxQ);
+        // Shuffle so chapter isolation (e.g. Chapter 3 alone with 100 items)
+        // does not always return the same first-N subset in bank order.
+        examQuestions = shuffleArray([...filteredPool]).slice(0, Math.min(maxQ, filteredPool.length));
     }
 
     // ---- 4. Initialise engine state (ephemeral until Save) ----
