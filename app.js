@@ -140,8 +140,8 @@ const appState = {
 
 const CERT_EXAM_METADATA = {
     // Academic & Secondary – WAEC Recruitment Aptitude (curated 200-q bank)
-    "WAEC-APT":   { questionCount: 60,  durationMinutes: 50  },
-    "WAECAPT":    { questionCount: 60,  durationMinutes: 50  },
+    "WAEC-APT":   { questionCount: 100,  durationMinutes: 60  },
+    "WAECAPT":    { questionCount: 100,  durationMinutes: 60  },
     "JAMB-UTME":  { questionCount: 180, durationMinutes: 120 },
     "JAMBUTME":   { questionCount: 180, durationMinutes: 120 },
 
